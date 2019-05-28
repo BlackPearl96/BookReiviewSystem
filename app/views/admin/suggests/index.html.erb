@@ -1,0 +1,32 @@
+  <div>
+    <h2><%= t "admin.suggests.suggest" %></h2>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="table-responsive">
+        <div class="row"></div>
+        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+          <thead>
+            <tr>
+              <th class="id"><%= t "admin.suggests.id" %></th>
+              <th class="name"><%= t "admin.suggests.name_book" %></th>
+              <th class="category"><%= t "admin.suggests.name_category" %></th>
+              <th class="username"><%= t "admin.suggests.user_name" %></th>
+              <th class="status"><%= t "admin.suggests.status" %></th>
+              <th class="action-suggests"><%= t "admin.suggests.action" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @suggests %>
+          </tbody>
+        </table>
+          <%= will_paginate @suggests %>
+        <% if Suggest.any? %>
+          <%= pie_chart Suggest.joins(:user).group(:name).count,
+            title: t("statistics_user"),download: "review_book", library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 1}}} %>
+          <%= pie_chart Suggest.joins(:user).group(:status).count,
+            title: t("statistics_status"),download: "review_book", library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 1}}} %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

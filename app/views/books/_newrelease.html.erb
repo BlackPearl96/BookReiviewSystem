@@ -1,0 +1,29 @@
+<section class="tg-sectionspace tg-haslayout">
+  <div class="container">
+    <div class="row">
+      <div class="tg-newrelease">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="tg-sectionhead">
+            <h2><span><%= t "view.books.newrelease.newspice" %></span>
+              <%= t "view.books.newrelease.newbook" %>
+            </h2>
+          </div>
+          <div class="tg-description">
+            <span><%= t "view.books.newrelease.description" %></span>
+          </div>
+          <div class="tg-btns">
+            <a class="tg-btn tg-active" href="javascript:void(0);">View All</a>
+            <a class="tg-btn" href="javascript:void(0);">Read More</a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="row">
+            <div class="tg-newreleasebooks">
+              <%= render partial: "booknew", collection: @book_news, as: :book %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

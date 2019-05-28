@@ -1,0 +1,45 @@
+user:
+  min_password: 6
+  max_password: 15
+  name:
+    max_length: 50
+  address:
+    max_length: 140
+  email:
+    max_length: 255
+  password:
+    min_length: 6
+  pass_rs:
+    rs_sent_at: 2
+review:
+  max_length: 300
+comment:
+  max_length: 300
+book:
+  max_length: 50
+book_index: "250x350"
+book_show: "325x475"
+helpers:
+  user:
+    size: 80
+controllers:
+  book:
+    index_page: 3
+  user:
+    index_page: 5
+    index_page_admin: 5
+models:
+  limit: 8
+controller:
+  sessions: "1"
+view:
+  users:
+    size: 50
+    size_follow: 30
+per_page: 5
+export:
+  xls: "xls"
+  csv: "csv"
+  users_xls: "To Excel"
+  users_csv: "To CSV"
+mailer_sender: "lqcuong.qt@gmail.com"

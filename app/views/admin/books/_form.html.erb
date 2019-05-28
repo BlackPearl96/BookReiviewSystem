@@ -1,0 +1,13 @@
+<%= simple_form_for [:admin, @book], html: {multipart: true} do |f| %>
+  <%= f.select :category_id, options_for_select(load_categories_for_selectbox),
+   prompt: "select a category" %>
+  <%= f.file_field :book_img %>
+  <%= f.input :title, label:  t(".book_title") %>
+  <%= f.input :description, label:  t(".description"), as: :ckeditor %>
+  <%= f.input :content, label:  t(".content"), as: :ckeditor %>
+  <%= f.input :author, label:  t(".author") %>
+  <%= f.input :publisher, label:  t(".publisher") %>
+  <%= f.input :rate_points, label:  t(".rate_points") %>
+  <%= f.input :number_pages, label:  t(".number_pages") %>
+  <%= f.submit yield(:button_text), class: "btn btn-success btn-md" %>
+<% end %>

@@ -1,0 +1,11 @@
+<%= search_form_for @search_book, url: admin_books_path, method: :get do |f| %>
+  <div class="field">
+    <%= f.text_field :title_cont, class: "form-control",
+      placeholder: t("view.admin.book.search_book") %>
+    <%= f.text_field :category_name_cont, class: "form-control",
+      placeholder: t("view.admin.book.search_category") %>
+    <%= f.text_field :author_cont, class: "form-control",
+      placeholder: t("view.admin.book.search_author") %>
+    <%= f.submit t("view.admin.submit_search"), class: "btn btn-success" %>
+  </div>
+<% end %>

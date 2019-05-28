@@ -1,0 +1,8 @@
+<%= t "view.public_activity.suggest.create" %>
+<% if activity.trackable %>
+  <%= link_to activity.trackable.title %>
+  <i><%= time_ago_in_words(activity.created_at) %></i> <i class="fa fa-sitemap fa-2x"></i>
+<% else %>
+  <%= t "view.public_activity.remove_activity" %>
+  <i><%= time_ago_in_words(activity.created_at) %></i> <i class="fa fa-sitemap fa-2x"></i>
+<% end %>

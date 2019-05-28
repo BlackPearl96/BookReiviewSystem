@@ -1,0 +1,28 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <% if @user.image %>
+          <%= image_tag(@user.image)%>
+        <% else %>
+          <%= image_tag @user.picture.url if @user.picture? %>
+        <% end %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section class="stats">
+      <%= render "shared/stats" %>
+    </section>
+    <%= render "follow_form" if user_signed_in? %>
+  </aside>
+
+  <div class="col-md-4">
+    <p><b>Tên:</b> <i><%= @user.name %></i></p>
+    <p><b>Địa chỉ email:</b> <i><%= @user.email %></i></p>
+    <% if @user.address %>
+      <p><b>Địa chỉ:</b> <i><%= @user.address %></i></p>
+    <% end %>
+    <p><b>Quyền:</b> <i><%= @user.role %></i></p>
+  </div>
+</div>

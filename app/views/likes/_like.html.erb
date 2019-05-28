@@ -1,0 +1,5 @@
+<% if like? @book %>
+  <%= link_to t("view.likes.unlike"), unlike_path(book_id: @book), method: :delete, remote: true, class: "fas fa-thumbs-up", id: "likes" %>
+<% else%>
+  <%= link_to t("view.likes.like"), like_path(book_id: @book), method: :post, remote: true, class: "far fa-thumbs-up", id: "likes" %>
+<% end %>

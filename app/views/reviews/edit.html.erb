@@ -1,0 +1,10 @@
+<div class="col-md-6 col-md-offset-3">
+  <div class="edit-review-form">
+    <h1><%= t "view.review.edit_review" %></h1>
+    <%= simple_form_for([@book, @review]) do |f| %>
+      <div id="rating-form"><label><%= t "view.review.rate" %></label></div>
+      <%= f.input :content %>
+      <%= f.button :submit, class: "btn-custom2" %>
+    <% end %>
+  </div>
+</div>

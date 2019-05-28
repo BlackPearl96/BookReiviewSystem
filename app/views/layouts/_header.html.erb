@@ -1,0 +1,136 @@
+<header id="tg-header" class="tg-header tg-haslayout">
+  <div class="tg-topbar">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="tg-addnav">
+            <li>
+              <a href="javascript:void(0);">
+                <i class="fa fa-envelope"></i>
+                <em><%= t "layouts.header.contact" %></em>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0);">
+                <i class="fa fa-question-circle"></i>
+                <em><%= t "layouts.header.help" %></em>
+              </a>
+            </li>
+          </ul>
+          <div style="float: right">
+            <ul class="tg-addnav">
+              <% if user_signed_in? %>
+                <% if current_user.admin? %>
+                  <li class="admin"><i class="fas fa-user-lock"></i><%= link_to t("layouts.header.admin"), admin_root_path %></li>
+                <% else %>
+                  <li class="suggest"><i class="fa fa-sitemap"></i><%= link_to t("layouts.header.suggest"), suggests_path(user_id: current_user) %></li>
+                <% end %>
+                  <li class="logo-current">
+                    <% if current_user.image %>
+                      <%= image_tag(current_user.image)%>
+                    <% else %>
+                      <%= image_tag current_user.picture.url if current_user.picture? %>
+                    <% end %>
+                    <%= current_user.name %>
+                  </li>
+                  <li class="user"><i class="fas fa-users"></i><%= link_to t("layouts.header.user"), users_path %></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user-tag"></i>
+                    Account <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="profile"><i class="fas fa-user-tie"></i><%= link_to t("layouts.header.profile"), current_user %></li>
+                    <li class="setting"><i class="fas fa-user-cog"></i><%= link_to t("layouts.header.setting"), edit_user_registration_path(current_user) %></li>
+                    <li class="activities"><i class="fas fa-align-justify"></i><%= link_to t("layouts.header.activities"), activities_path %></li>
+                    <li class="like"><i class="fas fa-thumbs-up"></i><%= link_to t("layouts.header.searchlike"), books_searchlike_path %></li>
+                    <li class="logout">
+                      <i class="fas fa-sign-out-alt"></i><%= link_to t("layouts.header.logout"), destroy_user_session_path, method: :delete %>
+                    </li>
+                  </ul>
+                </li>
+              <% else %>
+                <li class="login"><i class="fas fa-sign-in-alt"></i><%= link_to t("layouts.header.login"), new_user_session_path %></li>
+                <li class="signup"><i class="fas fa-user-plus"></i><%= link_to t("layouts.header.signup"), new_user_registration_path %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tg-middlecontainer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <strong class="tg-logo">
+            <a href="index-2.html">
+              <%= link_to image_tag("logo.png", alt: "company name here") %>
+            </a></strong>
+            <div class="tg-searchbox-search">
+            <%= search_form_for @q, url: books_search_path, method: :get do |f| %>
+              <div class="field">
+                <%= f.text_field :title_cont, class: "form-control",
+                  placeholder: t("layouts.header.search_book") %>
+                <%= f.text_field :category_name_cont, class: "form-control",
+                  placeholder: t("layouts.header.search_category") %>
+                <%= f.text_field :author_cont, class: "form-control",
+                  placeholder: t("layouts.header.search_author") %>
+                <%= f.submit t("layouts.header.search"), class: "btn btn-success" %>
+              </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tg-navigationarea">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <nav id="tg-nav" class="tg-nav">
+              <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
+                <ul>
+                  <li><%= link_to t("layouts.header.home"), books_path %></li>
+                  <li class="menu-item-has-children">
+                    <a href="javascript:void(0);">
+                      <%= t "layouts.header.all_categories" %>
+                    </a>
+                    <ul class="sub-menu">
+                      <% load_categories.each do |category| %>
+                        <% if category.deleted_at.nil? %>
+                          <li class="<%= 'active' if params[:category] == category.name %>">
+                            <%= link_to category.name, books_find_path(category: category.id), class: "link" %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="javascript:void(0);">
+                      <%= t "layouts.header.author" %>
+                    </a>
+                    <ul class="sub-menu">
+                      <% load_author.each do |author| %>
+                        <li><a href="#"><%= author.author %></a></li>
+                      <% end %>
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="javascript:void(0);">
+                      <%= t "layouts.header.latest_book" %>
+                    </a>
+                    <ul class="sub-menu">
+                      <% load_book_new.each do |book_new| %>
+                      <li><a href="/books/<%= book_new.id %>?category=<%= book_new.category.id %>"><%= book_new.title %></a></li>
+                      <% end %>
+                    </ul>
+                  </li>
+                  <li><%= link_to t("layouts.header.contact"), "#" %></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>

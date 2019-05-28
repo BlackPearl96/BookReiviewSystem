@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <h1><%= t "my_requests" %></h1>
+     <%= link_to t(".add_request"), new_suggest_path(user_id: current_user),
+    class: "btn btn-success" %>
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t (".index") %></th>
+          <th><%= t (".book_name") %></th>
+          <th><%= t (".book_category") %></th>
+          <th><%= t (".author") %></th>
+          <th><%= t (".created_at") %></th>
+          <th><%= t (".status") %></th>
+          <th><%= t (".action") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @suggests %>
+      </tbody>
+    </table>
+  </div>
+</div>

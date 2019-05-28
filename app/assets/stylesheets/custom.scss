@@ -1,0 +1,617 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'bootstrap/glyphicons';
+
+/*=============================================
+      Theme Text Color
+=============================================*/
+a,
+p a,
+p a:hover,
+a:hover,
+a:focus,
+a:active,
+.tg-stars span:after,
+.tg-textbox h3 span,
+.tg-bookprice ins,
+.tg-newsletter h4,
+.tg-404errorcontent span,
+.tg-widget ul li:hover a,
+.tg-widget ul li a:hover,
+.tg-widget ul li:hover a span,
+.tg-widget ul li:hover a em,
+.tg-relatedbooks .tg-postbook .tg-bookprice ins{color: #77b748;}
+/*=============================================
+      Theme Background Color
+=============================================*/
+.tg-btn:hover,
+.tg-btn.tg-active,
+.tg-navigationarea,
+.owl-prev:hover,
+.owl-next:hover,
+.tg-testimonial figure:before,
+.tg-headervtwo .tg-formsearch fieldset button,
+.tg-homeslidervtwo .tg-slidercontent .tg-btns .tg-btn:hover,
+.tg-homeslidervtwo .tg-slidercontent .tg-btns .tg-btn.tg-active,
+.tg-breadcrumb,
+#seconds,
+.tg-quantityholder .minus:hover,
+.tg-quantityholder .plus:hover,
+.tg-themetabs li a:before,
+.tg-tag:hover,
+.tg-btnreply:hover{background:#77b748;}
+/*=============================================
+      Theme Border Color
+=============================================*/
+textarea:focus,
+.tg-btn:hover,
+.tg-btn.tg-active,
+input:focus,
+.select select:focus,
+.form-control:focus,
+.tg-themedropdownmenu,
+.owl-prev:hover,
+.owl-next:hover,
+.tg-pickedbyauthor .tg-postbook:hover,
+.tg-testimonial figure img,
+.tg-footer,
+.tg-quantityholder .minus:hover,
+.tg-quantityholder .plus:hover,
+.tg-tag:hover,
+.tg-comments li .tg-authorbox:hover,
+.tg-comments li .tg-authorbox:hover .tg-bottomarrow,
+.tg-btnreply:hover{ border-color: #77b748;}
+/*=============================================
+      Theme Shadow Color
+=============================================*/
+.tg-btn:hover,
+.tg-btn.tg-active {box-shadow:inset 0 -2px 0 0 #649b3c;}
+/*=============================================
+      Theme Secondary Color
+=============================================*/
+.tg-bookscategories li a:hover,
+.tg-bookwriter:hover a,
+.tg-contactdetail .tg-contactinfo li span em a,
+.tg-newslist .tg-post .tg-postcontent .tg-description p a,
+.tg-addreviews a,
+.tg-productcontent .tg-description p a,
+.tg-alsoavailable figure figcaption ul li:hover span,
+.tg-widget ul li a.tg-btnviewall{color: #55acee;}
+
+/*=============================================
+      Theme Tags Color
+=============================================*/
+.tg-themetag { background: #f16945; }
+
+.tg-themetag:before { border-color: #f16945; }
+
+/*=============================================
+      Theme Counter Color
+=============================================*/
+.tg-drama .tg-collectioncountericon{background: #93648d;}
+.tg-drama h2,
+.tg-devlivery .tg-clientserviceicon i{color: #93648d;}
+.tg-horror .tg-collectioncountericon,
+.tg-widget ul li:hover:before{background: #4cc3d9;}
+.tg-horror h2,
+.tg-discount .tg-clientserviceicon i{color: #4cc3d9;}
+.tg-romance .tg-collectioncountericon{background: #7bc8a4;}
+.tg-romance h2,
+.tg-quality .tg-clientserviceicon i{color: #7bc8a4;}
+.tg-fashion .tg-collectioncountericon{background: #f16745;}
+.tg-fashion h2,
+.tg-delevrystock li span em,
+.tg-support .tg-clientserviceicon i{color: #f16745;}
+
+.voilamdo{
+  background-image: url('parallax/bgparallax-04.jpg');
+  background-attachment: fixed;
+  background-size:cover;
+}
+.status1 {
+  background-image: url('parallax/bgparallax-01.jpg');
+  background-attachment: fixed;
+  background-size:cover;
+}
+.status2 {
+  background-image: url('parallax/bgparallax-02.jpg');
+  background-attachment: fixed;
+  background-size:cover;
+}
+.status3 {
+  background-image: url('parallax/bgparallax-03.jpg');
+  background-attachment: fixed;
+  background-size:cover;
+}
+.books {
+  height:350px;
+}
+
+/* =============================================
+      Comingsoon Style
+============================================= */
+.tg-coming{
+  max-width:570px;
+  width:100%;
+  margin:0 auto;
+  background:#fff;
+  overflow:hidden;
+}
+.tg-coming .tg-logo{
+  width:100%;
+  padding:60px 20px;
+  border-bottom:1px solid #dbdbdb;
+}
+.tg-coming .tg-logo img{
+  width:auto;
+  height:auto;
+  display:block;
+  margin:0 auto;
+}
+.tg-coming .tg-formnewsletter{
+  margin:0;
+  padding:30px;
+  background:#f7f7f7;
+}
+
+
+
+.new {
+  background-image: url('comingsoon-bg.jpg');
+  background-size: cover;
+    background-attachment:fixed;
+}
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+/* Users index */
+$silver: #ccc;
+$silver-review: #efeeeeb0;
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+textarea#comment_content {
+    float: right;
+    width: 90%;
+    height: 120px;
+}
+.btn-custom3 {
+    width: 100%;
+    float: right;
+}
+input.btn.btn-custom3 {
+    width: 90%;
+}
+.cmt {
+    width: 90%;
+    float: right;
+    margin-top: 15px;
+    border-top: 1px solid $silver;
+}
+.cmt-comment {
+    margin-right: 5px;
+    padding: 10px 0px;
+}
+.info-review {
+    padding: 10px 0px;
+}
+label.form-control-label.text.required {
+    display: none;
+}
+.review {
+    width: 100%;
+    float: left;
+}
+.like-unlike {
+    width: 9%;
+    border: 1px solid #ccc;
+    padding: 3px;
+    background-color: rgba(0, 100, 0, 0.12);
+    border-radius: 3px;
+    float: left;
+    margin: -6px 0px;
+}
+.social-share-button {
+    margin: 0px 55px;
+}
+.description p {
+  font-size: 12px;
+  padding: 2px;
+}
+.like-share {
+    margin: 12px 0px 10px 0px;
+}
+.average_review-rating {
+    float: left;
+    margin: -1px 5px 0px 0px;
+}
+input.btn.btn-success {
+    width: 100%;
+}
+a.btn.btn-danger {
+    width: 100%;
+}
+.count_like {
+    width: 60%;
+    margin-left: 36px;
+}
+.info_book {
+    width: auto;
+    max-height: 225px;
+    min-height: 195px;
+}
+.view {
+    width: 500px;
+}
+a#likes {
+    width: 100%;
+    color: rgb(53, 120, 229);
+}
+.base {
+    float: right;
+    margin-top: -21px;
+    margin-right: 187px;
+}
+.add_review a {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    padding: 7px 93px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.tg-postbook {
+    margin-bottom: 12px;
+}
+a#likes{
+  width: 100%;
+}
+i.cr-review {
+    font-size: 13px;
+    color: #4c4949;
+}
+.review-rating {
+    margin: -10px 0px 3px -1px;
+}
+.review-comment-content {
+    background: $silver-review;
+    padding: 5px 10px 5px 15px;
+    border-radius: 6px;
+    width: 99%;
+}
+.abc {
+    background-color: #3578e5;
+    bottom: 0;
+    content: '';
+    left: 43px;
+    position: absolute;
+    top: 524px;
+    width: 3px;
+    bottom: 955px;
+}
+textarea#review_content {
+    height: 150px;
+}
+input.btn.btn-success {
+    float: left;
+    width: 15%;
+    margin: 3px 0px 0px 4px;
+}
+input#q_author_cont {
+    width: 28%;
+    float: left;
+}
+input#q_category_name_cont {
+    width: 28%;
+    float: left;
+}
+input#q_title_cont {
+    width: 28%;
+    float: left;
+}
+
+.tg-searchbox-search {
+    margin: 15px 0px 0px 65px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    padding: 0 225px;
+    position: absolute;
+}
+li.logo-current img {
+    width: 40px;
+    border-radius: 35px;
+    height: 40px;
+}
+.tg-addnav li + li {
+    border-left: 1px solid #dbdbdb;
+    height: 40px;
+}
+.alert.alert-success {
+    margin: 0px;
+}
+ul.users li img {
+    width: 50px;
+    border-radius: 65%;
+    height: 50px;
+}
+ul.users li {
+    list-style: none;
+    padding: 10px;
+}
+.logo-user img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 15px 5px 0px;
+    border-radius: 35px;
+}
+.cmt-comment .logo-user img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 3px 5px 0px;
+    border-radius: 35px;
+}
+section.user_info img {
+    width: 80px;
+    border-radius: 60px;
+    padding: 5px;
+    height: 80px;
+}
+h4.comment {
+    width: 708px;
+}
+.tg-widgetcontent .tg-post-1 {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+.tg-widget ul li figure a img {
+    display: block;
+    width: 105px;
+    padding: 3px;
+}
+a.fas.fa-trash-alt {
+    color: #d41a1a;
+    margin: -33px 155px;
+    float: left;
+}
+a.far.fa-trash-alt {
+    color: #d41a1a;
+    margin: -73px 370px;
+    float: left;
+}
+.review-comment-cmt {
+    background: #efeeeeb0;
+    padding: 5px 10px 5px 15px;
+    border-radius: 6px;
+    width: 100%;
+}
+label.form-check-label.boolean.optional {
+    width: 15%;
+}
+input#user_remember_me {
+    float: left;
+    width: 1%;
+    margin: 6px;
+}
+input.btn:hover {
+    opacity: 0.8;
+    color: black;
+}
+
+input.btn {
+    background: #4CAF50;
+    color: #fff;
+}
+input.btn.btn {
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    float: right;
+}
+input.btn.btn-primary {
+    width: 37%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    float: left;
+}
+.user_avatars img {
+    width: 45px;
+    height: 45px;
+    border-radius: 60%;
+}
+ul.users.follow li img {
+    width: 45px;
+    height: 45px;
+    border-radius: 60%;
+}
+.activity {
+    margin: 15px;
+    background: #cccccc45;
+    padding: 10px;
+    border-radius: 5px;
+}
+li.admin a {
+    float: right;
+    margin: 1px 5px 0px 5px;
+}
+li.suggest a {
+    float: right;
+    margin: 1px 5px 0px 5px;
+}
+li.user a {
+    float: right;
+    margin: 1px 5px 0px 5px;
+}
+li.setting a {
+    float: right;
+    margin: 9px 0px 0px -16px;
+}
+li.like a {
+    float: right;
+    margin: 8px 0px 0px -16px;
+}
+li.logout a {
+    float: right;
+    margin: 7px 0px 0px -16px;
+}
+li.activities a {
+    float: right;
+    margin: 7px 0px 0px -16px;
+}
+li.profile a {
+    float: right;
+    margin: 9px 0px 0px -16px;
+}
+li.profile {
+    margin: 0px 15px;
+}
+li.login a {
+    float: right;
+    margin: 0px 5px;
+}
+li.signup a {
+    float: right;
+    margin: 0px 5px;
+}
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+ol {
+  max-width: 350px;
+  counter-reset: my-awesome-counter;
+  list-style: none;
+  padding-left: 40px;
+}
+ol li {
+  margin: 0 0 0.5rem 0;
+  counter-increment: my-awesome-counter;
+  position: relative;
+}
+ol li::before {
+  content: counter(my-awesome-counter);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  --size: 32px;
+  left: calc(-1 * var(--size) - 4px);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  top: 0;
+  transform: rotate(0deg);
+  background: #77b748;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 1px 1px 0 #999;
+}
+.tg-widgetcontent ol {
+    margin: 5px 20px 0px 20px;
+}
+.tg-description p {
+    line-height: 30px;
+}
+img.bookslide {
+    height: 179px;
+    display: block;
+    width: 100%;
+}
+article.tg-post-1:hover {
+    border: 1px solid #cccccc42;
+    padding: 4px;
+    box-shadow: 2px 2px #623a3a40;
+}
+article.tg-post-1 {
+    padding: 5px;
+}

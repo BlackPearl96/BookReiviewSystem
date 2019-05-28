@@ -1,0 +1,8 @@
+<%= t "view.public_activity.comment.create" %>
+<% if activity.trackable %>
+  <%= link_to activity.trackable.review.book_title, activity.trackable.review.book %>
+  <i><%= time_ago_in_words(activity.created_at) %></i> <i class="fas fa-comment fa-2x"></i>
+<% else %>
+  <%= t "view.public_activity.remove_activity" %>
+  <i><%= time_ago_in_words(activity.created_at) %></i> <i class="fas fa-comment fa-2x"></i>
+<% end %>

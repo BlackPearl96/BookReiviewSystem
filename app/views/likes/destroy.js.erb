@@ -1,0 +1,2 @@
+$(".like_<%=@book.id%>").html("<%= j render partial: 'likes/like', local:{book: @book} %> ");
+$(".count_like_<%=@book.id%>").html(" <%= @book.likes.count %>");

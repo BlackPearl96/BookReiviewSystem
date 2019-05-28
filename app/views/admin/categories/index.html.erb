@@ -1,0 +1,28 @@
+  <div>
+    <h2><%= t ("admin.static_pages.index.category") %></h2>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <div class="row">
+            <%= render "search_categories" %>
+            <div class="col-sm-6">
+              <a href="/admin/categories/new" class="btn btn-success btn-md"><%= t "admin.categories.add_category" %></a>
+            </div>
+          </div>
+          <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+            <thead>
+              <tr>
+                <th><%= t "admin.categories.id" %></th>
+                <th><%= t "admin.categories.category_name" %></th>
+                <th class="action"><%= t "admin.categories.action" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render partial: "category", collection: load_categories, as: :category %>
+            </tbody>
+          </table>
+          <%= will_paginate %>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,6 @@
+<div class="container">
+  <h1><%= t "view.activities.index_activity" %></h1>
+    <%= render partial: "activities", collection: @activities, as: :activity %>
+    <%= render partial: "activities_user", collection: @activities_user, as: :activity %>
+  <%= will_paginate %>
+</div>

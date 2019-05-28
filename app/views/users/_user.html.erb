@@ -1,0 +1,8 @@
+<li>
+  <% if user.image %>
+    <%= image_tag(user.image)%>
+  <% else %>
+    <%= image_tag user.picture.url if user.picture? %>
+  <% end %>
+  <%= link_to user.name, user %>
+</li>

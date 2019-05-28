@@ -1,0 +1,86 @@
+  <div class="container">
+    <div id="tg-homeslider" class="tg-homeslider tg-haslayout owl-carousel">
+      <div class="item" data-vide-bg="poster: assets/images/slider/img-01.jpg" data-vide-options="position: 0% 50%">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-push-1 col-lg-8 col-lg-push-2">
+              <div class="tg-slidercontent">
+                <figure class="tg-authorimg"><a href="javascript:void(0);">
+                  <%= image_tag @books.find(1).book_img.url(:book_index), class: "bookslide" %>
+                </a></figure>
+                <h3><%= @books.find(1).title %></h3>
+                <h2>Author: <%= @books.find(1).author %></h2>
+                <div class="tg-description">
+                  <p><%= raw @books.find(1).description %></p>
+                </div>
+                <div>
+                  <a class="tg-btn" href="/books/1?category=1">read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item" data-vide-bg="poster: images/slider/img-01.jpg" data-vide-options="position: 0% 50%">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-push-1 col-lg-8 col-lg-push-2">
+              <div class="tg-slidercontent">
+                <figure class="tg-authorimg"><a href="javascript:void(0);">
+                  <%= image_tag @books.find(2).book_img.url(:book_index), class: "bookslide" %>
+                </a></figure>
+                <h3><%= @books.find(2).title %></h3>
+                <h2>Author: <%= @books.find(2).author %></h2>
+                <div class="tg-description">
+                  <p><%= raw @books.find(2).description %></p>
+                </div>
+                <div>
+
+                  <a class="tg-btn" href="/books/2?category=2">read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="tg-haslayout">
+    <div class="container">
+      <div class="row">
+        <div class="tg-allstatus">
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="status1 tg-parallax tg-bgbookwehave" data-z-index="2" data-appear-top-offset="600" data-parallax="scroll">
+              <div class="tg-status">
+                <div class="tg-statuscontent">
+                  <span class="tg-statusicon"><i class="icon-book"></i></span>
+                  <h2>Total books<span><%= @books.count %></span></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="status2 tg-parallax tg-bgtotalmembers" data-z-index="2" data-appear-bottom-offset="600" data-parallax="scroll">
+              <div class="tg-status">
+                <div class="tg-statuscontent">
+                  <span class="tg-statusicon"><i class="icon-user"></i></span>
+                  <h2>Total members<span><%= User.count %></span></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="status3 tg-parallax tg-bghappyusers" data-z-index="2" data-appear-top-offset="600" data-parallax="scroll">
+              <div class="tg-status">
+                <div class="tg-statuscontent">
+                  <span class="tg-statusicon"><i class="icon-heart"></i></span>
+                  <h2>Total categories<span><%= Category.count %></span></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

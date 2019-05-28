@@ -1,0 +1,133 @@
+<aside id="tg-sidebar" class="tg-sidebar">
+  <div class="tg-widget tg-widgetsearch">
+    <form class="tg-formtheme tg-formsearch">
+      <div class="form-group">
+        <button type="submit"><i class="fa fa-search"></i></button>
+        <input type="search" name="search" class="form-group" placeholder="Search by title, author, key...">
+      </div>
+    </form>
+  </div>
+  <div class="tg-widget tg-catagories">
+    <div class="tg-widgettitle">
+      <h3>Categories</h3>
+    </div>
+    <div class="tg-widgetcontent">
+      <ul>
+        <% load_categories.each do |category| %>
+          <% if category.deleted_at.nil? %>
+            <li class="<%= 'active' if params[:category] == category.id %>">
+              <span>
+                <%= link_to category.name, books_find_path(category: category.id), class: "link" %>
+              </span>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="tg-widget tg-widgettrending">
+    <div class="tg-widgettitle">
+      <h3>Latest Books</h3>
+    </div>
+    <div class="tg-widgetcontent">
+      <ul>
+        <% load_book_new.each do |book_new| %>
+          <li>
+            <article class="tg-post-1">
+              <figure><a href="javascript:void(0);">
+                <div class="img_book_new">
+                  <%= image_tag book_new.book_img.url(:book_index), class: "books-1" %>
+                <div class="tg-frontcover">
+              </a></figure>
+              <div class="tg-postcontent">
+                <div class="tg-posttitle">
+                  <h3><a href="/books/<%= book_new.id %>?category=<%= book_new.category.id %>"><%= book_new.title %></a></h3>
+                </div>
+                <span class="tg-bookwriter">Author:<%= book_new.author %></span>
+                <span class="tg-bookwriter">By:<%= book_new.publisher %></span>
+              </div>
+            </article>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="tg-widget tg-widgetinstagram">
+    <div class="tg-widgettitle">
+      <h3>Instagram</h3>
+    </div>
+    <div class="tg-widgetcontent">
+      <ul>
+        <li>
+          <figure>
+            <%= link_to image_tag("instagram/img-01.jpg", alt: "image description") %>
+
+            <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <%= link_to image_tag("instagram/img-02.jpg", alt: "image description") %>
+            <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <%= link_to image_tag("instagram/img-03.jpg", alt: "image description") %>
+            <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <%= link_to image_tag("instagram/img-04.jpg", alt: "image description") %>
+            <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+           <%= link_to image_tag("instagram/img-05.jpg", alt: "image description") %>
+            <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <%= link_to image_tag("instagram/img-06.jpg", alt: "image description") %>
+            <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <%= link_to image_tag("instagram/img-07.jpg", alt: "image description") %>
+            <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <%= link_to image_tag("instagram/img-08.jpg", alt: "image description") %>
+            <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <%= link_to image_tag("instagram/img-09.jpg", alt: "image description") %>
+            <figcaption><a href="javascript:void(0);"><i class="icon-heart"></i><em>50,134</em></a></figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tg-widget tg-widgetblogers">
+    <div class="tg-widgettitle">
+      <h3>Authors</h3>
+    </div>
+    <div class="tg-widgetcontent">
+      <ol>
+        <% load_author.each do |author| %>
+        <li>
+          <h5><a href="javascript:void(0);"><%= author.author %></a></h5>
+        </li>
+        <% end %>
+      </ol>
+    </div>
+  </div>
+</aside>

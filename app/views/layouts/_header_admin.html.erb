@@ -1,0 +1,37 @@
+<div id="wrapper">
+  <nav class="navbar navbar-default navbar-cls-top " role="navigation"
+   style="margin-bottom: 0">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+       data-target=".sidebar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><%=t ".sun*" %></a>
+    </div>
+    <div class="khoi" id="hash-dropdown" onclick="myFunction()">
+      <% if current_user.image %>
+        <%= image_tag(current_user.image)%>
+      <% else %>
+        <%= image_tag current_user.picture.url if current_user.picture? %>
+      <% end %>
+      <%= current_user.name %>
+      <div class="b-dropdown">
+        <%= link_to "View Profile", admin_user_path(current_user),class: "btn btn-success btn-block square-btn-adjust" %>
+        <%=link_to t( "layouts.header.logout"), destroy_user_session_path, method: :delete, class: "btn btn-success btn-block square-btn-adjust" %>
+      </div>
+    </div>
+<p class="en-vn">
+  <%= link_to_unless I18n.locale == :en, (image_tag 'en.png'), locale: :en %>
+  <%= link_to_unless I18n.locale == :vi, (image_tag 'vn.png'), locale: :vi %>
+</p>
+  </nav>
+</div>
+<script>
+ function myFunction() {
+   var element = document.getElementById("hash-dropdown");
+   element.classList.toggle("active");
+}
+</script>

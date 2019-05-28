@@ -1,0 +1,27 @@
+<%= t "view.users.user_mailer.hello" %> <%= @suggest.user.name %>
+(<%= t "view.users.user_mailer.email" %> <%= @suggest.user.email %>)
+<div><i><%= t "view.users.user_mailer.recommended_code" %></i><%= @suggest.id%></div>
+<h4><%= t "view.users.user_mailer.thankyou" %></h4>
+<div class="row">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= t("view.users.user_mailer.book_name") %></th>
+        <th><%= t("view.users.user_mailer.book_category") %></th>
+        <th><%= t("view.users.user_mailer.author") %></th>
+        <th><%= t("view.users.user_mailer.created_at") %></th>
+        <th><%= t("view.users.user_mailer.status") %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><%= @suggest.title %></td>
+      <td><%= @suggest.categories %></td>
+      <td><%= @suggest.author %></td>
+      <td><%= I18n.localize @suggest.created_at, format: :long %></td>
+      <td><%= @suggest.status %></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<i><%= t "view.users.user_mailer.goodbye" %> <%= @suggest.user.name %></i>

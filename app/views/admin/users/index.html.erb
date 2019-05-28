@@ -1,0 +1,21 @@
+  <div>
+    <h2><%= t "admin.users.user" %></h2>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="table-responsive">
+        <div class="row"></div>
+        <%= render "search_user" %>
+        <div class="add-user"><%= link_to t("admin.users.add_user"), new_admin_user_path, class: "btn btn-success" %></div>
+        <div class="export">
+            <i><%= t("view.users.index.download") %></i>
+            <%= link_to t("view.users.index.users_xls"), admin_users_path(format: Settings.export.xls), class: "fa fa-check btn btn-success " %>
+            <%= link_to t("view.users.index.users_csv"), admin_users_path(format: Settings.export.csv), class: "fa fa-check btn btn-success " %>
+        </div>
+        <%= render @users %>
+        <%= will_paginate @users %>
+        <%= pie_chart User.group(:name).count,
+          title: t("statistics_user"),download: "review_book", library: {animation: {easing: 'easeOutQuad'}, elements: {arc: {borderWidth: 1}}} %>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="tg-postbook">
+    <figure class="tg-featureimg">
+      <div class="tg-bookimg">
+        <a href="/books/<%= book.id %>?category=<%= book.category.id %>">
+          <div class="tg-frontcover">
+            <%= image_tag book.book_img.url(:book_index), class: "books" %>
+          </div>
+          <div class="tg-backcover">
+            <%= image_tag book.book_img.url(:book_index), class: "books" %>
+          </div>
+        </a>
+      </div>
+      <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+        <i class="icon-heart"></i>
+        <span>add to wishlist</span>
+      </a>
+    </figure>
+    <div class="tg-postbookcontent">
+      <ul class="tg-bookscategories">
+        <li><a href="javascript:void(0);"><%= book.category.name %></a></li>
+      </ul>
+      <div class="tg-themetagbox"><span class="tg-themetag">New</span></div>
+      <div class="tg-booktitle">
+        <h3><a href="/books/<%= book.id %>?category=<%= book.category.id %>">
+          <%= book.title %></a></h3>
+        </div>
+        <span class="tg-bookwriter">Author: <a href="javascript:void(0);"><%= book.author %></a></span>
+        <span class="tg-bookprice">
+        </span>
+      </div>
+  </div>
+</div>

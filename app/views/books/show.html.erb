@@ -1,0 +1,144 @@
+<%= render "banner" %>
+<div class="tg-sectionspace tg-haslayout">
+  <div class="container">
+    <div class="row">
+      <div id="tg-twocolumns" class="tg-twocolumns">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
+          <div id="tg-content" class="tg-content">
+            <div class="tg-featurebook alert" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <div class="tg-featureditm">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
+                    <figure>
+                      <%= link_to image_tag("img-04.png", alt: "image description") %>
+                    </figure>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="tg-featureditmcontent">
+                      <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+                      <div class="tg-booktitle">
+                        <h3><a href="javascript:void(0);"><%= t "thing" %></a></h3>
+                      </div>
+                      <span class="tg-bookwriter">By: <a href="javascript:void(0);">Farrah Whisenhunt</a></span>
+                      <span class="tg-stars"><span></span></span>
+                      <div class="tg-priceandbtn">
+                        <a class="tg-btn tg-btnstyletwo tg-active" href="javascript:void(0);">
+                          <i class="fa fa-shopping-basket"></i>
+                          <em>Read Learn</em>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tg-productdetail">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="tg-postbook">
+                    <figure class="tg-featureimg">
+                      <%= image_tag @book.book_img.url(:book_show), class: "book_show" %>
+                    </figure>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                  <div class="tg-productcontent">
+                    <ul class="tg-bookscategories">
+                      <li><a href="javascript:void(0);"><%= @book.category.name %></a></li>
+                    </ul>
+                    <div class="tg-booktitle">
+                      <h3><%= @book.title %></h3>
+                    </div>
+                    <div class="info_book">
+                      <span class="tg-bookwriter"><%= t "view.books.show.author" %>
+                        <%= @book.author %>
+                      </span>
+                      <span class="tg-bookwriter"><%= t "view.books.show.by" %>
+                        <%= @book.publisher %>
+                      </span>
+                      <span class="tg-bookwriter"><%= t "view.books.show.published_on" %>
+                        <%= I18n.localize @book.created_at, format: :long %>
+                      </span>
+                      <div class="interactive">
+                        <div class="view">
+                            |  <i class="fas fa-eye">  <%= @book.impressionist_count %></i> |
+                          <i class="fas fa-comments">  <%= @book.reviews.count %></i> |
+                          <div class="count_like_<%= @book.id %> fas fa-thumbs-up">  <%= @book.likes.count %></div>
+                          <div class="average_review-rating" data-score="<%= @book.rate_points %>"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="like-share">
+                      <% if user_signed_in? %>
+                        <div class="like-unlike">
+                          <div class="like_<%= @book.id %>">
+                              <%= render partial: "likes/like", local:{book: @book} %>
+                          </div>
+                        </div>
+                      <% end %>
+                      <div class="button-shared">
+                        <%= social_share_button_tag(@book.title) %>
+                      </div>
+                    </div>
+                    <div class="description">
+                      <%= raw @book.description %>
+                    </div>
+                  </div>
+                </div>
+                <div class="tg-productdescription">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="tg-sectionhead">
+                    </div>
+                    <ul class="tg-themetabs" role="tablist">
+                      <li role="presentation" class="active">
+                        <a href="#review" data-toggle="tab"><%= t "view.books.show.show_review" %></a>
+                      </li>
+                      <li role="presentation">
+                        <a href="#description" data-toggle="tab"><%= t "view.books.show.content" %></a>
+                      </li>
+                    </ul>
+                    <div class="tg-tab-content tab-content">
+                      <div role="tabpanel" class="tg-tab-pane tab-pane" id="description">
+                        <div class="tg-description">
+                          <h6><%= raw @book.description %></h6>
+                          <%= raw @book.content %>
+                        </div>
+                      </div>
+                      <div role="tabpanel" class="tg-tab-pane tab-pane active" id="review">
+                      <div class="review-comment">
+                        <div class="new-review-form">
+                          <%= render partial: "reviews/form", local:{book: @book} %>
+                        </div>
+                      </div>
+                        <div class="tg-description">
+                          <%= render @reviews %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% if @books.any? %>
+                    <div class="tg-sectionhead">
+                      <h2><span><%= t "view.books.show.new_book" %></span><%= t "view.books.show.relate" %></h2>
+                    </div>
+                    <%= render @books %>
+                  <% else %>
+                    <div class="tg-sectionhead">
+                      <h2><span><%= t "view.books.show.new_book" %></span><%= t "view.books.show.relate" %></h2>
+                    </div>
+                    <h4><%= t "view.books.show.no_category" %></h4>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left">
+          <%= render "left" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

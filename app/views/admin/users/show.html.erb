@@ -1,0 +1,27 @@
+<% provide(:title, current_user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h3>
+        <% if current_user.image %>
+          <%= image_tag(current_user.image)%>
+        <% else %>
+          <%= image_tag current_user.picture.url if current_user.picture? %>
+        <% end %>
+        <%= current_user.name %>
+      </h3>
+    </section>
+    <section class="stats">
+      <%= render "shared/stats" %>
+    </section>
+  </aside>
+  <div class="col-md-4">
+    <p><b>Tên:</b> <i><%= current_user.name %></i></p>
+    <p><b>Địa chỉ email:</b> <i><%= current_user.email %></i></p>
+    <% if current_user.address %>
+      <p><b>Địa chỉ:</b> <i><%= current_user.address %></i></p>
+    <% end %>
+    <p><b>Quyền:</b> <i><%= current_user.role %></i></p>
+    <p><b>Trạng thái: </b><span aria-label="Đang hoạt động" style="background: rgb(66, 183, 42);border-radius: 50%;display: inline-block;height: 10px;width: 10px;"></span> Online</p>
+  </div>
+</div>

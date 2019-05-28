@@ -1,0 +1,19 @@
+<section class="tg-sectionspace tg-haslayout">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="tg-sectionhead">
+          <h2><span><%= t "view.books.bookslider.people_choice" %></span>
+            <%= t "view.books.bookslider.bestselling" %>
+          </h2>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="tg-bestsellingbooksslider" class="tg-bestsellingbooksslider tg-bestsellingbooks owl-carousel">
+          <%= render partial: "sliderbook", collection: @books, as: :book %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

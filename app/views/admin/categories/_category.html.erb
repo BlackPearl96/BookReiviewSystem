@@ -1,0 +1,15 @@
+<tr class="gradeX">
+  <td id="catId"><%= category.id %></td>
+  <td>
+    <label for="rad1">
+      <%= link_to category.name, books_path(category: category.id), class: "link" %>
+    </label>
+  </td>
+  <td class="center">
+    <% unless category.deleted_at %>
+      <%= link_to t("admin.categories.delete_category"), admin_category_path(category), method: :delete, data:{confirm: t("sure")}, class: "btn btn-danger " %>
+    <% else %>
+      <%= link_to t("admin.categories.restore_category"), admin_category_path(category), method: :patch, class: "btn btn-success " %>
+    <% end %>
+  </td>
+</tr>

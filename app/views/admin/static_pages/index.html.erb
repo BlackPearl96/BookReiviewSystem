@@ -1,0 +1,100 @@
+<div class="tg-haslayout">
+  <div id="tg-twocolumns" class="tg-twocolumns">
+    <div>
+      <div id="tg-content" class="tg-content">
+        <div class="row">
+          <div class="col-md-4">
+              <h2><%= t ".admin_layout" %></h2>
+          </div>
+        </div>
+      <!-- /. ROW  -->
+        <div class="row">
+          <div class="col-md-3">
+            <div style="text-align: center" class="panel panel-back noti-box">
+              <a href="/admin/categories" title="">
+                <span>
+                  <i class="fa fa-bars fa-4x"></i>
+                </span>
+                <div>
+                  <p><%= t "category" %></p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div style="text-align: center" class="panel panel-back noti-box">
+              <a href="/admin/books" title="">
+                <span>
+                  <i class="fa fa-book fa-4x"></i>
+                </span>
+                <div>
+                  <p><%= t "book" %></p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div style="text-align: center" class="panel panel-back noti-box">
+              <a href="/admin/users" title="">
+                <span>
+                  <i class="fa fa-user fa-4x"></i>
+                </span>
+                <div>
+                  <p><%= t "user" %></p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div style="text-align: center" class="panel panel-back noti-box">
+              <a href="/admin/suggests" title="">
+                <span>
+                  <i class="fa fa-sitemap fa-4x"></i>
+                </span>
+                <div>
+                  <p><%= t "suggest" %></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <section class="tg-haslayout">
+            <div class="row">
+              <div class="tg-allstatus">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                  <div class="status1 tg-parallax tg-bgbookwehave" data-z-index="2" data-appear-top-offset="600" data-parallax="scroll">
+                    <div class="tg-status">
+                      <div class="tg-statuscontent">
+                        <span class="tg-statusicon"><i class="icon-book"></i></span>
+                        <h2>Total Books<span><%= @books.count %></span></h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                  <div class="status2 tg-parallax tg-bgtotalmembers" data-z-index="2" data-appear-bottom-offset="600" data-parallax="scroll">
+                    <div class="tg-status">
+                      <div class="tg-statuscontent">
+                        <span class="tg-statusicon"><i class="icon-user"></i></span>
+                        <h2>Total members<span><%= User.count %></span></h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                  <div class="status3 tg-parallax tg-bghappyusers" data-z-index="2" data-appear-top-offset="600" data-parallax="scroll">
+                    <div class="tg-status">
+                      <div class="tg-statuscontent">
+                        <span class="tg-statusicon"><i class="icon-heart"></i></span>
+                        <h2>Total Suggests<span><%= Suggest.count %></span></h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

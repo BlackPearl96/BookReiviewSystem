@@ -1,0 +1,31 @@
+<div class="container">
+  <h2><%= link_to t "devise.registrations.signup" %></h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :name, autofocus: true %>
+      <%= f.input :address, autofocus: true %>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.file_field :picture %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, t("devise.registrations.signup") %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+</div>

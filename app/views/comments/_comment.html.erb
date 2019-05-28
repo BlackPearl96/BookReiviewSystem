@@ -1,0 +1,26 @@
+<div class="comments_<%= comment.id %>">
+  <ul>
+      <div class="cmt">
+        <div class="cmt-comment">
+          <span class="content">
+          <div class="logo-user">
+            <% if comment.user.image %>
+              <%= image_tag(comment.user.image)%>
+            <% else %>
+              <%= image_tag comment.user.picture.url if comment.user.picture? %>
+            <% end %>
+          </div>
+            <h4 class="comment"><%= comment.user_name %> <i class="cr-review">comment <%= time_ago_in_words(comment.created_at) %> ago</i></h4>
+            <div class="review-comment-cmt"><i><%= comment.content %></i></div>
+          </span>
+          <div class="timestamp">
+            <% if can? :destroy, comment %>
+              <div class="links btn-group">
+                <%= link_to t("view.review.delete"), book_review_comment_path(@book, comment.review, comment), method: :delete, remote: true, class: "far fa-trash-alt" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </ul>
+</div>

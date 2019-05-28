@@ -1,0 +1,49 @@
+<div class="left-menu">
+  <main id="tg-main" class="tg-main tg-haslayout">
+    <nav class="navbar-default navbar-side" role="navigation">
+      <div class="sidebar-collapse">
+        <ul class="nav" id="main-menu">
+          <li class="info">
+            <div class="info-admin">
+              <% if current_user.image %>
+                <%= image_tag(current_user.image)%>
+              <% else %>
+                <%= image_tag current_user.picture.url if current_user.picture? %>
+              <% end %>
+              <p><%= current_user.name %></p>
+              <p>Administrator</p>
+              <p><span aria-label="Đang hoạt động" style="background: rgb(66, 183, 42);border-radius: 50%;display: inline-block;height: 10px;width: 10px;"></span> Online</p>
+              <!-- <a href="#">View Profile</a> -->
+              <%= link_to "View Profile", admin_user_path(current_user) %>
+            </div>
+          </li>
+          <li>
+            <a href="/admin/">
+              <i class="fa fa-home fa-3x"></i> <%= t "home" %>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/categories" >
+              <i class="fa fa-bars fa-3x" aria-hidden="true"></i><%= t "category" %><span class="badge"><%= Category.count %></span>
+            </a>
+          </li>
+          <li>
+            <a class="" href="/admin/books">
+              <i class="fa fa-book fa-3x"></i><%= t "book" %><span class="badge"><%= Book.count %></span>
+            </a>
+          </li>
+          <li>
+            <a class="" href="/admin/users">
+              <i class="fa fa-user fa-3x"></i></i> <%= t "user" %><span class="badge"><%= User.count %></span>
+            </a>
+          </li>
+          <li>
+            <a class="" href="/admin/suggests">
+              <i class="fa fa-sitemap fa-3x"></i><%= t "suggest" %><span class="badge"><%= Suggest.count %></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </main>
+</div>

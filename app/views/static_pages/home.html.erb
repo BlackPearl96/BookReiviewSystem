@@ -1,0 +1,635 @@
+
+<!--************************************
+        Home Slider Start
+    *************************************-->
+    <div class="container">
+      <div id="tg-homeslider" class="tg-homeslider tg-haslayout owl-carousel">
+      <div class="item" data-vide-bg="poster: assets/images/slider/img-01.jpg" data-vide-options="position: 0% 50%">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-push-1 col-lg-8 col-lg-push-2">
+              <div class="tg-slidercontent">
+                <figure class="tg-authorimg"><a href="javascript:void(0);">
+                  <%= link_to image_tag("author/imag-01.jpg", alt: "image description") %>
+                </a></figure>
+                <h1>Sun Asterisk</h1>
+                <h2>Latest 2019 Release</h2>
+                <div class="tg-description">
+                  <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore tolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoiars nisi ut aliquip commodo.</p>
+                </div>
+                <div>
+                  <a class="tg-btn" href="javascript:void(0);">read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item" data-vide-bg="poster: images/slider/img-01.jpg" data-vide-options="position: 0% 50%">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-push-1 col-lg-8 col-lg-push-2">
+              <div class="tg-slidercontent">
+                <figure class="tg-authorimg"><a href="javascript:void(0);">
+                  <%= link_to image_tag("author/imag-01.jpg", alt: "image description") %>
+                </a></figure>
+                <h1>Jude Morphew</h1>
+                <h2>Latest 2017 Release</h2>
+                <div class="tg-description">
+                  <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore tolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoiars nisi ut aliquip commodo.</p>
+                </div>
+                <div>
+
+                  <a class="tg-btn" href="javascript:void(0);">read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!--************************************
+        Home Slider End
+    *************************************-->
+    <!--************************************
+        Main Start
+    *************************************-->
+
+    <main id="tg-main" class="tg-main tg-haslayout">
+
+      <!--************************************
+          All Status Start
+      *************************************-->
+      <section class="tg-haslayout">
+        <div class="container">
+          <div class="row">
+            <div class="tg-allstatus">
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="status1 tg-parallax tg-bgbookwehave" data-z-index="2" data-appear-top-offset="600" data-parallax="scroll">
+                  <div class="tg-status">
+                    <div class="tg-statuscontent">
+                      <span class="tg-statusicon"><i class="icon-book"></i></span>
+                      <h2>Books we have<span>24,179,213</span></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="status2 tg-parallax tg-bgtotalmembers" data-z-index="2" data-appear-bottom-offset="600" data-parallax="scroll">
+                  <div class="tg-status">
+                    <div class="tg-statuscontent">
+                      <span class="tg-statusicon"><i class="icon-user"></i></span>
+                      <h2>Total members<span>15,179,213</span></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="status3 tg-parallax tg-bghappyusers" data-z-index="2" data-appear-top-offset="600" data-parallax="scroll">
+                  <div class="tg-status">
+                    <div class="tg-statuscontent">
+                      <span class="tg-statusicon"><i class="icon-heart"></i></span>
+                      <h2>Happy users<span>1,267,539</span></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--************************************
+          All Status End
+      *************************************-->
+
+      <!--************************************
+          Best Selling Start
+      *************************************-->
+      <section class="tg-sectionspace tg-haslayout">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="tg-sectionhead">
+                <h2><span>People’s Choice</span>Bestselling Books</h2>
+                <a class="tg-btn" href="javascript:void(0);">View All</a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div id="tg-bestsellingbooksslider" class="tg-bestsellingbooksslider tg-bestsellingbooks owl-carousel">
+                <% @books.each do |book| %>
+                <div class="item">
+                  <div class="tg-postbook">
+                    <figure class="tg-featureimg">
+                      <div class="tg-bookimg">
+                        <a href="/books/<%= book.id %>" title="">
+                        <div class="tg-frontcover">
+                         <%= image_tag book.book_img.url(:original), class: "books" %>
+                        </div>
+                        <div class="tg-backcover">
+                          <%= image_tag book.book_img.url(:original), class: "books" %>
+                        </div>
+                        </a>
+                      </div>
+                      <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                        <i class="icon-heart"></i>
+                        <span>add to wishlist</span>
+                      </a>
+                    </figure>
+                    <div class="tg-postbookcontent">
+                      <ul class="tg-bookscategories">
+                        <li>
+                          <%=link_to book.category.name, books_path(category: book.category.name) %>
+                        </li>
+                      </ul>
+                      <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
+                      <div class="tg-booktitle">
+                        <h3><a href="/books/<%= book.id %>"><%= book.title %></a></h3>
+                      </div>
+                      <span class="tg-bookwriter">By: <%= book.publisher %></span>
+                      <span class="tg-stars"><span></span></span>
+                      <span class="tg-bookprice">
+
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+                 <% end %>
+              </div>
+            </div>
+
+        </div>
+      </section>
+      <!--************************************
+          Best Selling End
+      *************************************-->
+      <!--************************************
+          Featured Item Start
+      *************************************-->
+      <section class="tg-bglight tg-haslayout">
+        <div class="container">
+          <div class="row">
+            <div class="tg-featureditm">
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
+                <figure>
+                  <%= link_to image_tag("img-02.png", alt: "image description") %>
+
+                </figure>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <div class="tg-featureditmcontent">
+                  <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+                  <div class="tg-booktitle">
+                    <h3><a href="javascript:void(0);">Things To Know About Green Flat Design</a></h3>
+                  </div>
+                  <span class="tg-bookwriter">By: <a href="javascript:void(0);">Farrah Whisenhunt</a></span>
+                  <span class="tg-stars"><span></span></span>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--************************************
+          Featured Item End
+      *************************************-->
+      <!--************************************
+          New Release Start
+      *************************************-->
+      <section class="tg-sectionspace tg-haslayout">
+        <div class="container">
+          <div class="row">
+            <div class="tg-newrelease">
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="tg-sectionhead">
+                  <h2><span>Taste The New Spice</span>New Release Books</h2>
+                </div>
+                <div class="tg-description">
+                  <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore toloregna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoiars nisiuip commodo consequat aute irure dolor in aprehenderit aveli esseati cillum dolor fugiat nulla pariatur cepteur sint occaecat cupidatat.</p>
+                </div>
+                <div class="tg-btns">
+                  <a class="tg-btn tg-active" href="javascript:void(0);">View All</a>
+                  <a class="tg-btn" href="javascript:void(0);">Read More</a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="row">
+                  <div class="tg-newreleasebooks">
+                    <div class="col-xs-4 col-sm-4 col-md-6 col-lg-4">
+                      <div class="tg-postbook">
+                        <figure class="tg-featureimg">
+                          <div class="tg-bookimg">
+                            <div class="tg-frontcover">
+                              <%= link_to image_tag("books/img-07.jpg", alt: "image description") %>
+                              </div>
+                            <div class="tg-backcover">
+                              <%= link_to image_tag("books/img-07.jpg", alt: "image description") %></div>
+                          </div>
+                          <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                            <i class="icon-heart"></i>
+                            <span>add to wishlist</span>
+                          </a>
+                        </figure>
+                        <div class="tg-postbookcontent">
+                          <ul class="tg-bookscategories">
+                            <li><a href="javascript:void(0);">Adventure</a></li>
+                            <li><a href="javascript:void(0);">Fun</a></li>
+                          </ul>
+                          <div class="tg-booktitle">
+                            <h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
+                          </div>
+                          <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
+                          <span class="tg-stars"><span></span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-6 col-lg-4">
+                      <div class="tg-postbook">
+                        <figure class="tg-featureimg">
+                          <div class="tg-bookimg">
+                            <div class="tg-frontcover">
+                              <%= link_to image_tag("books/img-08.jpg", alt: "image description") %></div>
+                            <div class="tg-backcover">
+                              <%= link_to image_tag("books/img-08.jpg", alt: "image description") %></div>
+                          </div>
+                          <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                            <i class="icon-heart"></i>
+                            <span>add to wishlist</span>
+                          </a>
+                        </figure>
+                        <div class="tg-postbookcontent">
+                          <ul class="tg-bookscategories">
+                            <li><a href="javascript:void(0);">Adventure</a></li>
+                            <li><a href="javascript:void(0);">Fun</a></li>
+                          </ul>
+                          <div class="tg-booktitle">
+                            <h3><a href="javascript:void(0);">Drive Safely, No Bumping</a></h3>
+                          </div>
+                          <span class="tg-bookwriter">By: <a href="javascript:void(0);">Sunshine Orlando</a></span>
+                          <span class="tg-stars"><span></span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-4 hidden-md">
+                      <div class="tg-postbook">
+                        <figure class="tg-featureimg">
+                          <div class="tg-bookimg">
+                            <div class="tg-frontcover">
+                              <%= link_to image_tag("books/img-09.jpg", alt: "image description") %></div>
+                            <div class="tg-backcover">
+                              <%= link_to image_tag("books/img-09.jpg", alt: "image description") %></div>
+                          </div>
+                          <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                            <i class="icon-heart"></i>
+                            <span>add to wishlist</span>
+                          </a>
+                        </figure>
+                        <div class="tg-postbookcontent">
+                          <ul class="tg-bookscategories">
+                            <li><a href="javascript:void(0);">Adventure</a></li>
+                            <li><a href="javascript:void(0);">Fun</a></li>
+                          </ul>
+                          <div class="tg-booktitle">
+                            <h3><a href="javascript:void(0);">Let The Good Times Roll Up</a></h3>
+                          </div>
+                          <span class="tg-bookwriter">By: <a href="javascript:void(0);">Elisabeth Ronning</a></span>
+                          <span class="tg-stars"><span></span></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--************************************
+          New Release End
+      *************************************-->
+      <!--************************************
+          Picked By Author Start
+      *************************************-->
+      <section class="tg-sectionspace tg-haslayout">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="tg-sectionhead">
+                <h2><span>Some Great Books</span>Picked By Authors</h2>
+                <a class="tg-btn" href="javascript:void(0);">View All</a>
+              </div>
+            </div>
+            <div id="tg-pickedbyauthorslider" class="tg-pickedbyauthor tg-pickedbyauthorslider owl-carousel">
+              <div class="item">
+                <div class="tg-postbook">
+                  <figure class="tg-featureimg">
+                    <div class="tg-bookimg">
+                      <div class="tg-frontcover">
+                        <%= link_to image_tag("books/img-10.jpg", alt: "image description") %>
+
+                        </div>
+                    </div>
+                    <div class="tg-hovercontent">
+                      <div class="tg-description">
+                        <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore toloregna aliqua enim adia minim veniam, quis nostrud.</p>
+                      </div>
+                      <strong class="tg-bookpage">Book Pages: 206</strong>
+                      <strong class="tg-bookcategory">Category: Adventure, Fun</strong>
+
+                      <div class="tg-ratingbox"><span class="tg-stars"><span></span></span></div>
+                    </div>
+                  </figure>
+                  <div class="tg-postbookcontent">
+                    <div class="tg-booktitle">
+                      <h3><a href="javascript:void(0);">Seven Minutes In Heaven</a></h3>
+                    </div>
+                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Sunshine Orlando</a></span>
+                    <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
+                      <i class="fa fa-shopping-basket"></i>
+                      <em>add to wishlist</em>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="tg-postbook">
+                  <figure class="tg-featureimg">
+                    <div class="tg-bookimg">
+                      <div class="tg-frontcover">
+                        <%= link_to image_tag("books/img-11.jpg", alt: "image description") %>
+
+                        </div>
+                    </div>
+                    <div class="tg-hovercontent">
+                      <div class="tg-description">
+                        <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore toloregna aliqua enim adia minim veniam, quis nostrud.</p>
+                      </div>
+                      <strong class="tg-bookpage">Book Pages: 206</strong>
+                      <strong class="tg-bookcategory">Category: Adventure, Fun</strong>
+
+                      <div class="tg-ratingbox"><span class="tg-stars"><span></span></span></div>
+                    </div>
+                  </figure>
+                  <div class="tg-postbookcontent">
+                    <div class="tg-booktitle">
+                      <h3><a href="javascript:void(0);">Slow And Steady Wins The Race</a></h3>
+                    </div>
+                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Drusilla Glandon</a></span>
+                    <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
+                      <i class="fa fa-shopping-basket"></i>
+                      <em>add to wishlist</em>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="tg-postbook">
+                  <figure class="tg-featureimg">
+                    <div class="tg-bookimg">
+                      <div class="tg-frontcover"><%= link_to image_tag("books/img-12.jpg", alt: "image description") %></div>
+                    </div>
+                    <div class="tg-hovercontent">
+                      <div class="tg-description">
+                        <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore toloregna aliqua enim adia minim veniam, quis nostrud.</p>
+                      </div>
+                      <strong class="tg-bookpage">Book Pages: 206</strong>
+                      <strong class="tg-bookcategory">Category: Adventure, Fun</strong>
+
+                      <div class="tg-ratingbox"><span class="tg-stars"><span></span></span></div>
+                    </div>
+                  </figure>
+                  <div class="tg-postbookcontent">
+                    <div class="tg-booktitle">
+                      <h3><a href="javascript:void(0);">There’s No Time Like The Present</a></h3>
+                    </div>
+                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Patrick Seller</a></span>
+                    <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
+                      <i class="fa fa-shopping-basket"></i>
+                      <em>add to wishlist</em>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="tg-postbook">
+                  <figure class="tg-featureimg">
+                    <div class="tg-bookimg">
+                      <div class="tg-frontcover"><%= link_to image_tag("books/img-10.jpg", alt: "image description") %></div>
+                    </div>
+                    <div class="tg-hovercontent">
+                      <div class="tg-description">
+                        <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore toloregna aliqua enim adia minim veniam, quis nostrud.</p>
+                      </div>
+                      <strong class="tg-bookpage">Book Pages: 206</strong>
+                      <strong class="tg-bookcategory">Category: Adventure, Fun</strong>
+
+                      <div class="tg-ratingbox"><span class="tg-stars"><span></span></span></div>
+                    </div>
+                  </figure>
+                  <div class="tg-postbookcontent">
+                    <div class="tg-booktitle">
+                      <h3><a href="javascript:void(0);">Seven Minutes In Heaven</a></h3>
+                    </div>
+                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Sunshine Orlando</a></span>
+                    <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
+                      <i class="fa fa-shopping-basket"></i>
+                      <em>add to wishlist</em>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="tg-postbook">
+                  <figure class="tg-featureimg">
+                    <div class="tg-bookimg">
+                      <div class="tg-frontcover"><%= link_to image_tag("books/img-11.jpg", alt: "image description") %></div>
+                    </div>
+                    <div class="tg-hovercontent">
+                      <div class="tg-description">
+                        <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore toloregna aliqua enim adia minim veniam, quis nostrud.</p>
+                      </div>
+                      <strong class="tg-bookpage">Book Pages: 206</strong>
+                      <strong class="tg-bookcategory">Category: Adventure, Fun</strong>
+
+                      <div class="tg-ratingbox"><span class="tg-stars"><span></span></span></div>
+                    </div>
+                  </figure>
+                  <div class="tg-postbookcontent">
+                    <div class="tg-booktitle">
+                      <h3><a href="javascript:void(0);">Slow And Steady Wins The Race</a></h3>
+                    </div>
+                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Drusilla Glandon</a></span>
+                    <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
+                      <i class="fa fa-shopping-basket"></i>
+                      <em>add to wishlist</em>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--************************************
+          Picked By Author End
+      *************************************-->
+      <!--************************************
+          Call to Action Start
+      *************************************-->
+<!-- <div class="tg-parallax" data-image-src="<%= link_to image_tag('parallax/bgparallax-06.jpg') %>"> </div>
+ -->
+
+        <section>
+            <div class="voilamdo tg-sectionspace tg-haslayout">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="tg-calltoaction">
+                  <h2>Open Discount For All</h2>
+                  <h3>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</h3>
+                  <a class="tg-btn tg-active" href="javascript:void(0);">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--************************************
+          Call to Action End
+      *************************************-->
+      <!--************************************
+          Latest News Start
+      *************************************-->
+      <section class="tg-sectionspace tg-haslayout">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="tg-sectionhead">
+                <h2><span>Latest News &amp; Articles</span>What's Hot in The News</h2>
+                <a class="tg-btn" href="javascript:void(0);">View All</a>
+              </div>
+            </div>
+            <div id="tg-postslider" class="tg-postslider tg-blogpost owl-carousel">
+              <article class="item tg-post">
+                <figure><a href="javascript:void(0);">
+                  <%= link_to image_tag("blog/img-01.jpg", alt: "image description") %>
+                </a></figure>
+                <div class="tg-postcontent">
+                  <ul class="tg-bookscategories">
+                    <li><a href="javascript:void(0);">Adventure</a></li>
+                    <li><a href="javascript:void(0);">Fun</a></li>
+                  </ul>
+                  <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+                  <div class="tg-posttitle">
+                    <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
+                  </div>
+                  <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
+                  <ul class="tg-postmetadata">
+                    <li><a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a></li>
+                    <li><a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a></li>
+                  </ul>
+                </div>
+              </article>
+              <article class="item tg-post">
+                <figure><a href="javascript:void(0);"><%= link_to image_tag("blog/img-02.jpg", alt: "image description") %></a></figure>
+                <div class="tg-postcontent">
+                  <ul class="tg-bookscategories">
+                    <li><a href="javascript:void(0);">Adventure</a></li>
+                    <li><a href="javascript:void(0);">Fun</a></li>
+                  </ul>
+                  <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+                  <div class="tg-posttitle">
+                    <h3><a href="javascript:void(0);">All She Wants To Do Is Dance</a></h3>
+                  </div>
+                  <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
+                  <ul class="tg-postmetadata">
+                    <li><a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a></li>
+                    <li><a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a></li>
+                  </ul>
+                </div>
+              </article>
+              <article class="item tg-post">
+                <figure><a href="javascript:void(0);"><%= link_to image_tag("blog/img-03.jpg", alt: "image description") %></a></figure>
+                <div class="tg-postcontent">
+                  <ul class="tg-bookscategories">
+                    <li><a href="javascript:void(0);">Adventure</a></li>
+                    <li><a href="javascript:void(0);">Fun</a></li>
+                  </ul>
+                  <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+                  <div class="tg-posttitle">
+                    <h3><a href="javascript:void(0);">Why Walk When You Can Climb?</a></h3>
+                  </div>
+                  <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
+                  <ul class="tg-postmetadata">
+                    <li><a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a></li>
+                    <li><a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a></li>
+                  </ul>
+                </div>
+              </article>
+              <article class="item tg-post">
+                <figure><a href="javascript:void(0);"><%= link_to image_tag("blog/img-04.jpg", alt: "image description") %></a></figure>
+                <div class="tg-postcontent">
+                  <ul class="tg-bookscategories">
+                    <li><a href="javascript:void(0);">Adventure</a></li>
+                    <li><a href="javascript:void(0);">Fun</a></li>
+                  </ul>
+                  <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+                  <div class="tg-posttitle">
+                    <h3><a href="javascript:void(0);">Dance Like Nobody’s Watching</a></h3>
+                  </div>
+                  <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
+                  <ul class="tg-postmetadata">
+                    <li><a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a></li>
+                    <li><a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a></li>
+                  </ul>
+                </div>
+              </article>
+              <article class="item tg-post">
+                <figure><a href="javascript:void(0);"><%= link_to image_tag("blog/img-02.jpg", alt: "image description") %></a></figure>
+                <div class="tg-postcontent">
+                  <ul class="tg-bookscategories">
+                    <li><a href="javascript:void(0);">Adventure</a></li>
+                    <li><a href="javascript:void(0);">Fun</a></li>
+                  </ul>
+                  <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+                  <div class="tg-posttitle">
+                    <h3><a href="javascript:void(0);">All She Wants To Do Is Dance</a></h3>
+                  </div>
+                  <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
+                  <ul class="tg-postmetadata">
+                    <li><a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a></li>
+                    <li><a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a></li>
+                  </ul>
+                </div>
+              </article>
+              <article class="item tg-post">
+                <figure><a href="javascript:void(0);"><%= link_to image_tag("blog/img-03.jpg", alt: "image description") %></a></figure>
+                <div class="tg-postcontent">
+                  <ul class="tg-bookscategories">
+                    <li><a href="javascript:void(0);">Adventure</a></li>
+                    <li><a href="javascript:void(0);">Fun</a></li>
+                  </ul>
+                  <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+                  <div class="tg-posttitle">
+                    <h3><a href="javascript:void(0);">Why Walk When You Can Climb?</a></h3>
+                  </div>
+                  <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
+                  <ul class="tg-postmetadata">
+                    <li><a href="javascript:void(0);"><i class="fa fa-comment-o"></i><i>21,415 Comments</i></a></li>
+                    <li><a href="javascript:void(0);"><i class="fa fa-eye"></i><i>24,565 Views</i></a></li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--************************************
+          Latest News End
+      *************************************-->
+    </main>
+    <!--************************************
+        Main End
+    *************************************-->

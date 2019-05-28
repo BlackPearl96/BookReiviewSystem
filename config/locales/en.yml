@@ -1,0 +1,415 @@
+en:
+  count_review: "%{count} reviews"
+  title: "Book Review System"
+  messenger: "sorry, Not found !"
+  no_data: "Sorrt, data not found"
+  please_login: "Please Log in."
+  hello: "Hello world"
+  pass_reset: "Password reset"
+  sure: "You a sure!"
+  error: "An error has occurred, please try again!"
+  statistics_like: "Statistics of book likes"
+  statistics_review: "Statistics of book reviews"
+  statistics_user: "Statistics user"
+  statistics_status: "Statistics status"
+  my_requests: "My Suggest"
+  thing: "Things To Know About Green Flat Design"
+  home: "Home"
+  category: "Category Management"
+  book: "Book Management"
+  user: "User Management"
+  suggest: "Suggest Management"
+  dates:
+    formats:
+      date_month_year_concise: '%d-%m-%y'
+  no_admin: "There is no access to this page"
+  layouts:
+    application:
+      app: "application"
+    header:
+      contact: "Contact"
+      help: "Help"
+      login: "Login"
+      account: "Account"
+      profile: "Profile"
+      setting: "Settings"
+      logout: "Logout"
+      user: "Users"
+      add_book: "AddBook"
+      home: "Home"
+      all_categories: "All Categories"
+      author: "Authors"
+      latest_book: "Latest Book"
+      suggest: Suggest
+      searchlike: "List Like"
+      activities: "Activity"
+      admin: "Admin"
+      signup: "Sign Up"
+      search_book: "Search name book ..."
+      search_category: "Search category ..."
+      search_author: "Search author ..."
+      search: "Search"
+    header_admin:
+      sun*: "Sun Asterisk"
+      hi: "Xin Chào, "
+    left_admin:
+      home: "Trang Chủ"
+      category: "Quản Lý Danh Mục"
+      book: " Quản Lý Truyện"
+      user: "Quản Lý Người Dùng"
+      suggest: "Quản Lý yêu Cầu"
+      comment: "Quản Lý Comment"
+      reply: "Reply"
+      suggest: "My suggest"
+  deleted: "Book deleted"
+  un_delete: "unsuccessfully_book"
+  suggests:
+    create:
+      success_rq: "Add susgest successfully"
+      delete_suggest: "Delete susgest successfully"
+    index:
+      book_name: "Book Name"
+      book_category: "Book Category"
+      author: "Author"
+      created_at: "Created_at"
+      status: "Status"
+      action: "Action"
+    new:
+      send: "Send"
+      back: "Back"
+  books:
+    banner:
+      all_book: "All Books"
+    form:
+      select: "Select a category"
+      book_title: "Book Title"
+    edit:
+      book_title: "Book Title"
+  shared:
+    error_messages:
+      status: "The form contains"
+      errors: "error"
+  controller:
+    no_data_book: "Sorry, no data book"
+    no_data_rq: "Sorry, no data request"
+    no_data_review: "Sorry, no data review"
+    no_data_comment: "Sorry, no data comment"
+    category: "Category not found!"
+    update: "Update success"
+    success_rq: "success request"
+    can't_rq: "can't request"
+    admin:
+      base:
+        no_admin: "There is no access to this page"
+    mailers:
+      user_mailer:
+        suggest: "Suggest Confirmation"
+    category:
+      restore_category: "Restore category successfully"
+      temporary_category: "Delete category temporary"
+      create_category: "Create category successfully"
+      nofound: "No Found"
+    mailers:
+      user_mailer:
+        suggest: "Suggest Confirmation"
+    book:
+      please_login: "Please Log in."
+      error_page: "You do not have access to this page"
+      create_book: "Create book successfully"
+      update_book: "Update book successfully"
+      delete_book: "Delete book successfully"
+      delete_fail: "Delete book fail"
+    user:
+      create_user: "Welcome to the Sample App!"
+      find_user_error: "Sorry, no data found user"
+      update_profile: "Profile Update"
+      delete_user: "Delete user successfully"
+      delete_faild: "Delete user faild"
+      please_login: "Please Log in."
+      following: "List Following"
+      followers: "List Followers"
+      setuser: "Set user success"
+      setadmin: "Set admin success"
+      nofound: "Sorry. No found"
+      errors: "ERRORS"
+      create_user: "Create user successfully"
+    sessions:
+      error_login: "Invalid email/password combination"
+      error_load_user: "Sorry, email does not exist"
+      error_load_email: "Sorry, no data found email"
+    password_reset:
+      email_sent_pass: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+      empty: "can't be empty"
+      pass_reset: "Password has been reset."
+      pass_expired: "Password reset has expired"
+      email_not_found: "Email address not found"
+    reviews:
+      create_review: "Created a new review"
+      create_review_fail: "Create reivew fail"
+      update_review: "Updated a new review"
+      update_review_fail: "Updated review fail"
+      delete_reivew: "Delete review success"
+      delete_review_fail: "Delete review fail"
+    comments:
+      create_comment: "Created a new review"
+      create_comment_fail: "Create reivew fail"
+      delete_comment: "Delete comment success"
+      delete_comment_fail: "Delete comment fail"
+    likes:
+      like_success: "Like a book success"
+      like_fail: "Like a book fail"
+      unlike_success: "Unlike a book success"
+      unlike_fail: "Unlike a book fail"
+      load_like: "Sorry, no like"
+    admin:
+      fail: "data not found"
+    suggests:
+      rejected: "Offer rejected"
+      fail: "Suggest Fail"
+      loadsuggest: "No found suggest"
+  view:
+    admin:
+      book:
+        search_book: "Search name book ..."
+        search_category: "Search category ..."
+        search_author: "Search author ..."
+      category:
+        search_category: "Search category"
+        delete: "Delete"
+        restore: "Restore"
+      user:
+        search_user: "Search name user ..."
+        search_email: "Search mail ..."
+        selection_role: "Selection role"
+        sign_up: "Create User"
+      submit_search: "Search"
+    shared:
+      following: "following"
+      followers: "followers"
+    users:
+      index:
+        download: "Download"
+        users_xls: "To Excel"
+        users_csv: "To CSV"
+        adduser: "ADD USER"
+      new:
+        sign_up: "Sign up"
+        create_user: "Create my account"
+      user:
+        delete: "Delete"
+        setadmin: "Admin"
+        setuser: "User"
+        sure: "You sure?"
+        all_users: "All users"
+        update_profile: "Update your profile"
+        edit: "Edit user"
+        btn_save: "Save changes"
+        title_up: "Update your profile"
+        url_avatar: "http://gravatar.com/emails"
+        change: "change"
+        view_profile: "view my profile"
+      user_mailer:
+        pass_reset: "Password reset"
+        reset: "To reset your password click the link below"
+        reset_pass: "Reset password"
+        two_hours: "This link will expire in two hours."
+        request: "If you did not request your password to be reset, please ignore this email and
+your password will stay as it is."
+        hello: "Hello:"
+        email: "Email:"
+        thankyou: "Thank you for suggest a book to our website"
+        goodbye: "Goodbye and see you again: "
+        recommended_code: "Recommended Code: "
+        book_name: "Name Book"
+        book_category: "Category"
+        author: "Author"
+        created_at: "Create at"
+        status: "Status"
+        goodbye: "GoodBye"
+      follow:
+        follow: "Follow"
+        unfollow: "Unfollow"
+    books:
+      show:
+        show_review: "Reviews"
+        content: "Content"
+        back: "Back"
+        edit_book: "Edit Book"
+        delete: "Delete"
+        sure: "Are you sure?"
+        author: "Author:"
+        by: "By:"
+        published_on: "Published on"
+        avg_rating: "Average Rating:"
+        base: "Based on:"
+        review: "reviews"
+        new_book: "New Books"
+        relate: "Related Category"
+        relate_book: "Related Books"
+        also_like: "You May Also Like"
+        no_category: "There are no books currently in this category"
+        addreview: "AddReview"
+        search: "Search title, author ..."
+      bookslider:
+        people_choice: "People’s Choice"
+        bestselling: "Bestselling Books"
+      newrelease:
+        newspice: "Taste The New Spice"
+        newbook: "New Release Books"
+        description: "Consectetur adipisicing elit sed do eiusmod tempor
+        incididunt labore toloregna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamcoiars nisiuip commodo consequat aute irure
+        dolor in aprehenderit aveli esseati cillum dolor fugiat nulla pariatur
+        cepteur sint occaecat cupidatat."
+    likes:
+      like: "Like"
+      unlike: "Like"
+    sessions:
+      login: "Log in"
+      signup : "Sign up now!"
+      error_login: "Invalid email/password combination"
+      error_load_email: "Sorry, no data found email"
+      new_user: "New user"
+      remember: Remember me on this computer
+    pass_reset:
+      edit:
+        reset_pass: "Reset password"
+        update_pass: "Update password"
+      new:
+        forgot_pass: "Forgot password"
+        submit: "Submit"
+    password_reset:
+      new:
+        forgot: "Forgot password"
+        submit: "Submit"
+      edit:
+        reset: "Reset password"
+        update: "Update password"
+    review:
+      created_at: "Reviews create at %{at}"
+      rate: "Rating:"
+      new_review: "New Review Book:"
+      edit_review: "Edit Reviews Book:"
+      edit: "Edit"
+      delete: ""
+      sure: "Are you sure ? "
+      ago: "ago"
+      cmt: "comment"
+    public_activity:
+      remove_activity: "which has since been removed"
+      comment:
+        create: "add comment to"
+      like:
+        create: "add like to"
+      review:
+        create: "add review to"
+      suggest:
+        create: "add suggest to"
+    activities:
+      index_activity: "List Activities"
+    suggests:
+      index:
+        suggest: "Quan Ly Yeu Cau"
+        id: "ID"
+        title: "Name Book"
+        category: "Category"
+        username: "User Name"
+        status: "Status"
+        action: "Action"
+        accept: "Accept"
+        reject: "Reject"
+  activerecord:
+    attributes:
+      user:
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        address: "Address"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        role: "Role"
+  admin:
+    static_pages:
+      index:
+        admin_layout: "ADMINISTRATOR"
+        category: "Category Management"
+        book: "Book Management"
+        user: "Quản lý người dùng"
+        suggest: "Quản lý yêu cầu"
+        comment: " comment/reply"
+    books:
+      book:
+        sure: "Are you sure!"
+        edit: " Edit"
+        delete: " Delete"
+        name: "Tên"
+        view: "Lượt xem"
+        image: "Hình ảnh"
+        action: "Chức năng"
+        category: "Danh mục"
+        id: "ID"
+      edit:
+        edit_book: "Edit Book"
+      index:
+        add: "ADD BOOK"
+        id: "ID"
+        name: "Name Book"
+        category: "Name Category"
+        author: "Author"
+        image: "image"
+        action: "Action"
+        edit: "Edit"
+        delete: "Delete"
+      new:
+        add_book: "Add Book"
+      form:
+        book_title: "Name Book"
+        description: "Description"
+        content: "Content"
+        author: "Author"
+        publisher: "Publisher"
+        rate_points: "Rate Points"
+        number_pages: "Number Pages"
+        submit_update: "Update Book"
+        submit_add: "Add Book"
+    categories:
+      delete: " Delete"
+      edit: "Sửa Danh Mục"
+      name: "Tên Danh Mục"
+      id: "ID"
+      category_name: Name Category
+      action: "Action"
+      add_category: "Add Category"
+      delete_category: "Delete"
+      restore_category: "Restore"
+    users:
+      setuser: "setUser"
+      setadmin: "setAdmin"
+      add_user: "Add User"
+      delete: "Delete"
+      id: "ID"
+      user_name: "User Name"
+      email: "Email"
+      role: "Role"
+      action: "Action"
+      user: "User Management"
+      search_user: "Search for users"
+    suggests:
+      suggest: "Suggest Management"
+      id: "ID"
+      name_book: "Name Book"
+      name_category: "Name Category"
+      user_name: "User Name"
+      status: "Status"
+      action: "Action"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "too short (minimum %{count} characters)"
+              too_long: "too long (maximun %{count} characters)"
+            name:
+              blank: "can't be blank"

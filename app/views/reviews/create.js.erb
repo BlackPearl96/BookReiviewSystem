@@ -1,0 +1,6 @@
+$("<%= j render @review %>").appendTo('.reviews_<%= @book.id %>');
+$('.review-rating').raty({
+  readOnly: true,
+  path: '/assets/',
+});
+$("#review_content").val("");

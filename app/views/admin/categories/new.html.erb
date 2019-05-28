@@ -1,0 +1,27 @@
+<div>
+  <div id="page-inner">
+    <div class="row">
+      <div class="col-md-12">
+        <h2><%= t "admin.categories.add" %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="form-group">
+              <label><%= t ".name" %></label>
+              <%= simple_form_for [:admin, @category], html: {multipart: true} do |f| %>
+                <%= f.label :parent_id %>
+                <%= f.text_field :parent_id %>
+                <%= f.label :Category_name %>
+                <%= f.text_field :name %>
+                <%= f.submit t("admin.categories.add_category"), class: "btn btn-success btn-md" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="review_<%= review.id %>">
+  <div class="info-review">
+    <div class="logo-user">
+      <% if review.user.image %>
+        <%= image_tag(review.user.image)%>
+      <% else %>
+        <%= image_tag review.user.picture.url if review.user.picture? %>
+      <% end %>
+    </div>
+    <h4><%= review.user_name %> <i class="cr-review">review <%= time_ago_in_words(review.created_at) %> ago</i></h4>
+    <div class="review-rating" data-score="<%= review.rate %>"></div>
+    <% if user_signed_in? %>
+      <% if can? :destroy, review %>
+        <div class="links btn-group">
+          <%= link_to t("view.review.delete"), book_review_path(review.book, review), method:
+          :delete, remote: true, class: "fas fa-trash-alt" %>
+        </div>
+      <% end %>
+    <% end %>
+    <div class="review-comment-content"><span><%= review.content %></span></div>
+    <button id="hide_<%= review.id %>">Hide</button>
+    <button id="show_<%= review.id %>">Show</button>
+  </div>
+
+  <div class = "review">
+
+    <% if review.comments.any? %>
+    <% review.comments.each do |comment| %>
+    <%= render partial: "comments/comment", locals: {comment: comment,
+      book: review.book} %>
+      <% end %>
+      <% end %>
+    <div class="comments_<%= review.id %>">
+      <%= simple_form_for [@book, review, review.comments.build], remote: true do |f| %>
+      <div class="comment">
+        <div class="content">
+          <%= f.input :content, class: "cmt" %>
+        </div>
+        <div class="btn-custom3">
+          <%= f.button :submit, Comment, class: "btn-custom3" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  </div>
+
+<script>
+$(document).ready(function(){
+  $(".comments_<%= review.id %>").hide();
+  $("#hide_<%= review.id %>").click(function(){
+    $(".comments_<%= review.id %>").hide();
+  });
+  $("#show_<%= review.id %>").click(function(){
+    $(".comments_<%= review.id %>").show();
+  });
+});
+</script>
