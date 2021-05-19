@@ -202,7 +202,9 @@ GEM
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.0331)
-    mimemagic (0.3.3)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.7.0)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
@@ -252,7 +254,8 @@ GEM
       i18n (>= 0.5.0)
       railties (>= 3.0.0)
     public_suffix (3.0.3)
-    puma (3.12.1)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -433,7 +436,7 @@ DEPENDENCIES
   paranoia (~> 2.2)
   popper_js (~> 1.14.5)
   public_activity
-  puma (~> 3.11)
+  puma (~> 4.3)
   rails (~> 5.2.2)
   rails-controller-testing
   rails-i18n
